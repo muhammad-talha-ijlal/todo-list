@@ -11,7 +11,7 @@ app.set("view engine", "ejs")
 
 mongoose.connect("mongodb+srv://talhaijlal:Test123@cluster0.uhngxvr.mongodb.net/itemsDB")
 
-var itemSchema = new mongoose.Schema({
+var itemSchema = mongoose.Schema({
     item : String
 })
 
