@@ -7,7 +7,7 @@ const app = express()
 
 app.use(bodyParser.urlencoded({extended : true}))
 app.use(express.static("public"))
-//app.set("view engine", "ejs")
+app.set("view engine", "ejs")
 
 mongoose.connect("mongodb+srv://talhaijlal:Test123@cluster0.uhngxvr.mongodb.net/itemsDB")
 
@@ -22,10 +22,8 @@ var listItems = []
 app.get("/",(req, res)=>{
     var date = new Date().toLocaleDateString("en-US", {weekday: "long"})
     listItems = Item.find((err, listItems)=>{
-        //res.render("index", {date : date, items : listItems})
-    })
-    res.send("Hi")
-    
+        res.render("index", {date : date, items : listItems})
+    })    
 })
 
 app.post("/",(req, res)=>{
