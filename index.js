@@ -22,9 +22,9 @@ var listItems = []
 app.get("/",(req, res)=>{
     var date = new Date().toLocaleDateString("en-US", {weekday: "long"})
     listItems = Item.find((err, listItems)=>{
-        res.render("index", {date : date, items : listItems})
+        //res.render("index", {date : date, items : listItems})
     })
-
+    res.render("Hi")
     
 })
 
